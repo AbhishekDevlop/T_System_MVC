@@ -1,0 +1,58 @@
+﻿<h2>This is ProductList</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+   @foreach (MVC_Demo.Models.Product item in ViewBag.Products)
+		{
+			
+			<tr>
+				<td>
+					@item.Id
+				</td>
+				<td>
+					@item.Name
+				</td>
+				<td>
+					@item.Price
+				</td>
+			</tr>
+
+		}
+    
+  </tbody>
+</table>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+   @foreach (MVC_Demo.Models.Product item in (IEnumerable<Product>) ViewData["Products"])
+		{
+			
+			<tr>
+				<td>
+					@item.Id
+				</td>
+				<td>
+					@item.Name
+				</td>
+				<td>
+					@item.Price
+				</td>
+			</tr>
+
+		}
+    
+  </tbody>
+</table>

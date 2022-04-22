@@ -1,0 +1,27 @@
+﻿@using MVC_Demo.Models;
+@{
+	ViewBag.Title = "Index";
+}
+<h2>HTML Helper Demo</h2>
+
+@{Html.BeginForm();}
+@Html.Label("Enter Name") @Html.TextBox("t1")<br />
+@Html.Label("Enter Address") @Html.TextArea("text")<br />
+@Html.Label("Enter Password") @Html.Password("userpass")<br />
+
+@Html.Label("select Gender") Male @Html.RadioButton("Gender","Male")&nbsp;
+                             Female @Html.RadioButton("Gender","Female")<br />
+
+@Html.Label("select Gender")
+<select class="form-control">
+	<option>Select Gender</option>
+	<option>Male</option>
+	<option>Female</option>
+</select>
+<br /><br />
+@Html.DropDownList("selectGender", new SelectList(Enum.GetValues(typeof(Gender))),
+"Select Gender",new {@class = "form-control"})
+
+<br /><br /><br />
+@Html.CheckBox("Select") I Agree
+@{Html.EndForm();}
